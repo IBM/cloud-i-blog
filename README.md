@@ -294,7 +294,7 @@ As mentioned previously in this article, some of the Ansible core modules can su
 The following table lists the core modules that can be used for IBM i tasks. Please note that, these modules only passed sanity tests from IBM i development team. There is future plan to do full testing for these modules in the coming months. 
 
 <br />
-<table border="1">
+<table>
 	<tbody>
 		<tr>
 			<td>
@@ -370,4 +370,83 @@ The following table lists the core modules that can be used for IBM i tasks. Ple
 
 More about Ansible for IBM i GitHub repository. 
 Currently, all the Ansible for IBM i modules, plugins and samples can be found via the link https://github.ibm.com/IBMi-Cloud/ansible-for-i/. You may want to start with the README for detail information including an installation guide.
+
+# Examples
+With the supported IBM i modules and Ansible core modules, common IBM i tasks can all be done by Ansible. Here give some examples of how to use Ansible modules for IBM i. 
+1. Prepare your environment.
+Before you can successfully run your first Ansible task, you need to make sure that your environment is ready. This means that your Ansible engine system and IBM i systems to be managed should both meet the certain environment requirements. You need to follow the README of the Ansible for IBM i GitHub repository for dependency checking and installation guide. 
+After your environment is ready, the first thing to do is to configure IBM i inventory. For Ansible engine, inventory information could be configured into configuration file. For more information about Ansible inventory, please check out this link: https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html. Here is a sample file content of the IBM i inventory:
+
+[ibmi]
+9.5.xxx.yyy ansible_ssh_user=youribmiuser ansible_ssh_pass=yourpassword
+
+[ibmi:vars]
+ansible_python_interpreter="/QOpensys/pkgs/bin/python2"
+ansible_ssh_common_args='-o StrictHostKeyChecking=no'
+
+In the above section of configuration file, a group named ‘ibmi’ has been created and there is only one system under that group. Also, the variables against group ibmi have been defined in the file. One important variable is ansible_python_interpreter which tells Ansible where to find Python on the endpoint IBM i system in group ibmi. You
+If you use Ansible Tower, you will have to do all the inventory configurations via the GUI.
+
+2. Run Ansible command interactively using ibmi_cl_command module.
+In this example, we will run a simple IBM i module named ibmi_cl_command interactively in the command terminal. The module will execute a CL command which creates a library of C1 on the system under inventory ibmi. As you can see from below command, option -i and -M are explicitly used to point out the inventory path and the IBM i module directory. You don’t need to use these two options if you have put the inventory and IBM i modules into Ansible default locations.
+ansible ibmi -i /yourpath/hosts_ibmi.ini -M /yourmodulepath/ibmi/ -m ibmi_cl_command -a "cmd='crtlib lib(C1)'"
+
+Output:
+DB2MB1PA.RCH.STGLABS.IBM.COM | SUCCESS => {
+    "changed": false,
+    "cmd": "crtlib lib(C2)",
+    "delta": "0:00:00.386441",
+    "end": "2019-12-11 11:55:42.627733",
+    "joblog": false,
+    "rc": 0,
+    "rc_msg": "Success",
+    "start": "2019-12-11 11:55:42.241292",
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "CPC2102: Library C1 created.\n",
+    "stdout_lines": [
+        "CPC2102: Library C1 created."
+    ]
+}
+
+If you want to see the detail parameters that are supported by a particular module, you could use ansible-doc command. In this example, you could issue below command to get all the parameters supported by ibmi_cl_command module:
+ansible-doc -s -M /yourmodulepath/ibmi/ ibmi_cl_command
+       - name: Executes a CL command on a remote IBM i node
+         ibmi_cl_command:
+         asp_group:  # Specifies the name of the auxiliary storage pool (ASP) group to set for the current thread. The ASP group name is the name of the primary ASP device within the ASP group.
+         cmd:         # (required) The IBM i CL command to run.
+         joblog:      # If set to 'true', append JOBLOG to stderr/stderr_lines.
+
+More examples can be found in GitHub repository: https://github.com/IBM/ansible-for-i/blob/master/examples/ibmi/samples.txt
+
+3. Run a simple Ansible playbook.
+The Ansible playbook is used to run a list of tasks executed by modules. IBM i modules can be used together with other Ansible modules to complete complex tasks. Here is a simple example to demonstrate how to write playbook for IBM i systems. 
+---
+- hosts: ibmi
+  gather_facts: no
+  tasks:
+  - name: run the CL command to create a library
+    ibmi_cl_command:
+          cmd: crtlib lib(ansiblei)
+
+Once you have your playbook written, you can use ansible-playbook command to run the playbook. Similar to ‘ansible’ command, you could specify the path to IBM i modules and inventory if you don’t want to use the default locations.
+         ansible-playbook -i /yourpath/hosts_ibmi.ini -M /yourmodulepath/ ibmi-cl-command-sample.yml
+
+For more information about Ansible playbook, please refer to the link here: 
+https://docs.ansible.com/ansible/latest/user_guide/playbooks.html
+In the Ansible for IBM i GitHub repository, there are several playbook samples provided in the link here: 
+https://github.com/IBM/ansible-for-i/tree/master/examples/ibmi/playbooks 
+In the repository, there are IBM i module test cases in the format of playbooks as well. You could refer to them as more examples as well.
+
+4.	Run IBM i modules and playbooks with Ansible Tower. 
+In the Ansible for IBM i repository, there is a sample playbook ibmi_try_tower_structure.yml in the root directory that you could use in your Ansible Tower template. The repository structure supports creating Ansible Tower project. Here are some key steps showing you where to config the GitHub repository to load the modules and playbooks.
+
+The assumption here is that the inventory and credential are all configured already. When creating a new project, you could specify the SCM TYPE as Git and fill the Ansible for IBM i GitHub repository link in SCM URL field. ‘master’ branch is used in this example.
+
+
+After the project has been created, you need to define Template to run particular tasks. In the Template, you need to select the playbook from drop down menu of PLAYBOOK option. The list of playbook files are automatically loaded from GitHub repository. 
+
+You could launch the tasks when everything is configured. 
+
+To summarize, with IBM i modules, Ansible is perfect for your IBM i automation work for both on-prem and cloud environment. Especially in today's hybrid cloud environment with different types of systems and devices, orchestration of tasks together to form the workflow can help improving the efficiency, shortening the time to market, avoiding errors, achieving consistency, etc. Everyone should consider to automate your work in some degree, and Ansible should be one of your great choices. 
 
