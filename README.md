@@ -439,22 +439,23 @@ Once you have your playbook written, you can use ansible-playbook command to run
 ```
 ansible-playbook -i /yourpath/hosts_ibmi.ini -M /yourmodulepath/ ibmi-cl-command-sample.yml
 ```
-For more information about Ansible playbook, please refer to the link here: 
-https://docs.ansible.com/ansible/latest/user_guide/playbooks.html
-In the Ansible for IBM i GitHub repository, there are several playbook samples provided in the link here: 
-https://github.com/IBM/ansible-for-i/tree/master/examples/ibmi/playbooks 
+For more information about Ansible playbook, please refer to the link here: <br>
+https://docs.ansible.com/ansible/latest/user_guide/playbooks.html <br>
+In the Ansible for IBM i GitHub repository, there are several playbook samples provided in the link here: <br>
+https://github.com/IBM/ansible-for-i/tree/master/examples/ibmi/playbooks <br>
 In the repository, there are IBM i module test cases in the format of playbooks as well. You could refer to them as more examples as well.
 
 4. Run IBM i modules and playbooks with Ansible Tower. 
 In the Ansible for IBM i repository, there is a sample playbook ibmi_try_tower_structure.yml in the root directory that you could use in your Ansible Tower template. The repository structure supports creating Ansible Tower project. Here are some key steps showing you where to config the GitHub repository to load the modules and playbooks.
 
-The assumption here is that the inventory and credential are all configured already. When creating a new project, you could specify the SCM TYPE as Git and fill the Ansible for IBM i GitHub repository link in SCM URL field. ‘master’ branch is used in this example.
+The assumption here is that the inventory and credential are all configured already. When creating a new project, you could specify the SCM TYPE as Git and fill the Ansible for IBM i GitHub repository link in SCM URL field. ‘master’ branch is used in this example. <br>
 ![Create IBM i Sample Project in Ansible Tower](https://github.com/IBM/cloud-i-blog/blob/master/resources/pic/misc/ansible-automation-tower-1.png)
-
-After the project has been created, you need to define Template to run particular tasks. In the Template, you need to select the playbook from drop down menu of PLAYBOOK option. The list of playbook files are automatically loaded from GitHub repository. 
+<br>
+After the project has been created, you need to define Template to run particular tasks. In the Template, you need to select the playbook from drop down menu of PLAYBOOK option. The list of playbook files are automatically loaded from GitHub repository. <br>
 ![Create IBM i Sample Template in Ansible Tower](https://github.com/IBM/cloud-i-blog/blob/master/resources/pic/misc/ansible-automation-tower-2.png)
-You could launch the tasks when everything is configured. 
+<br>
+You could launch the tasks when everything is configured. <br>
 ![Run IBM i Sample Tasks in Ansible Tower](https://github.com/IBM/cloud-i-blog/blob/master/resources/pic/misc/ansible-automation-tower-3.png)
-
+<br>
 To summarize, with IBM i modules, Ansible is perfect for your IBM i automation work for both on-prem and cloud environment. Especially in today's hybrid cloud environment with different types of systems and devices, orchestration of tasks together to form the workflow can help improving the efficiency, shortening the time to market, avoiding errors, achieving consistency, etc. Everyone should consider to automate your work in some degree, and Ansible should be one of your great choices. 
 
