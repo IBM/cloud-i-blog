@@ -292,8 +292,6 @@ The following table lists the current IBM i modules in the GitHub repository. Mo
 As mentioned previously in this article, some of the Ansible core modules can support IBM i. These modules are not developed specifically for IBM i and such modules can be divided into two categories. One category of modules controls the working flow of the Ansible playbook running, and they can be used for all the IBM i tasks. For example, the wait_for_connection module controls the playbook to wait for the endpoint connection being set up. The other category can run the tasks under IBM i PASE. For example, the command module can run tasks with PASE commands. 
 
 The following table lists the core modules that can be used for IBM i tasks. Please note that, these modules only passed sanity tests from IBM i development team. There is future plan to do full testing for these modules in the coming months. 
-
-<br />
 <table>
 	<tbody>
 		<tr>
@@ -366,7 +364,6 @@ The following table lists the core modules that can be used for IBM i tasks. Ple
 		</tr>
 	</tbody>
 </table>
-<br />
 
 More about Ansible for IBM i GitHub repository. 
 Currently, all the Ansible for IBM i modules, plugins and samples can be found via the link https://github.ibm.com/IBMi-Cloud/ansible-for-i/. You may want to start with the README for detail information including an installation guide.
