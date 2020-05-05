@@ -452,10 +452,10 @@ The assumption here is that the inventory and credential are all configured alre
 ![Create IBM i Sample Project in Ansible Tower](resources/pic/misc/ansible-automation-tower-1.png)
 <br>
 After the project has been created, you need to define Template to run particular tasks. In the Template, you need to select the playbook from drop down menu of PLAYBOOK option. The list of playbook files are automatically loaded from GitHub repository. <br>
-![Create IBM i Sample Template in Ansible Tower](https://github.com/IBM/cloud-i-blog/blob/master/resources/pic/misc/ansible-automation-tower-2.png)
+![Create IBM i Sample Template in Ansible Tower](resources/pic/misc/ansible-automation-tower-2.png)
 <br>
 You could launch the tasks when everything is configured. <br>
-![Run IBM i Sample Tasks in Ansible Tower](https://github.com/IBM/cloud-i-blog/blob/master/resources/pic/misc/ansible-automation-tower-3.png)
+![Run IBM i Sample Tasks in Ansible Tower](resources/pic/misc/ansible-automation-tower-3.png)
 <br>
 To summarize, with IBM i modules, Ansible is perfect for your IBM i automation work for both on-prem and cloud environment. Especially in today's hybrid cloud environment with different types of systems and devices, orchestration of tasks together to form the workflow can help improving the efficiency, shortening the time to market, avoiding errors, achieving consistency, etc. Everyone should consider to automate your work in some degree, and Ansible should be one of your great choices. 
 
