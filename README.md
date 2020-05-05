@@ -390,7 +390,7 @@ If you use Ansible Tower, you will have to do all the inventory configurations v
 
 2. Run Ansible command interactively using ibmi_cl_command module.
 In this example, we will run a simple IBM i module named ibmi_cl_command interactively in the command terminal. The module will execute a CL command which creates a library of C1 on the system under inventory ibmi. As you can see from below command, option -i and -M are explicitly used to point out the inventory path and the IBM i module directory. You don’t need to use these two options if you have put the inventory and IBM i modules into Ansible default locations.
-```
+<code>
 ansible ibmi -i /yourpath/hosts_ibmi.ini -M /yourmodulepath/ibmi/ -m ibmi_cl_command -a "cmd='crtlib lib(C1)'"
 
 Output:
@@ -410,17 +410,17 @@ DB2MB1PA.RCH.STGLABS.IBM.COM | SUCCESS => {
         "CPC2102: Library C1 created."
     ]
 }
-```
+</code>
 
 If you want to see the detail parameters that are supported by a particular module, you could use ansible-doc command. In this example, you could issue below command to get all the parameters supported by ibmi_cl_command module:
-```
+<code>
 ansible-doc -s -M /yourmodulepath/ibmi/ ibmi_cl_command
   - name: Executes a CL command on a remote IBM i node
     ibmi_cl_command:
       asp_group:   # Specifies the name of the auxiliary storage pool (ASP) group to set for the current thread. The ASP group name is the name of the primary ASP device within the ASP group.
       cmd:         # (required) The IBM i CL command to run.
       joblog:      # If set to 'true', append JOBLOG to stderr/stderr_lines.
-```
+</code>
 
 More examples can be found in GitHub repository: https://github.com/IBM/ansible-for-i/blob/master/examples/ibmi/samples.txt
 
