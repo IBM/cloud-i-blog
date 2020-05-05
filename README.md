@@ -428,7 +428,7 @@ The Ansible playbook is used to run a list of tasks executed by modules. IBM i m
   tasks:
   - name: run the CL command to create a library
     ibmi_cl_command:
-          cmd: crtlib lib(ansiblei)
+      cmd: crtlib lib(ansiblei)
 ```
 Once you have your playbook written, you can use ansible-playbook command to run the playbook. Similar to ‘ansible’ command, you could specify the path to IBM i modules and inventory if you don’t want to use the default locations.
 ```
