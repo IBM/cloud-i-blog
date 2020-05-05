@@ -293,4 +293,81 @@ As mentioned previously in this article, some of the Ansible core modules can su
 
 The following table lists the core modules that can be used for IBM i tasks. Please note that, these modules only passed sanity tests from IBM i development team. There is future plan to do full testing for these modules in the coming months. 
 
+<br />
+<table border="1">
+	<tbody>
+		<tr>
+			<td>
+				script<br />
+			</td>
+			<td>
+				set_up<br />
+			</td>
+			<td>
+				copy<br />
+			</td>
+			<td>
+				fetch<br />
+			</td>
+			<td>
+				command<br />
+			</td>
+		</tr>
+		<tr>
+			<td>
+				file<br />
+			</td>
+			<td>
+				find<br />
+			</td>
+			<td>
+				stat<br />
+			</td>
+			<td>
+				shell<br />
+			</td>
+			<td>
+				raw<br />
+			</td>
+		</tr>
+		<tr>
+			<td>
+				pip<br />
+			</td>
+			<td>
+				yum<br />
+			</td>
+			<td>
+				pause<br />
+			</td>
+			<td>
+				ping<br />
+			</td>
+			<td>
+				wait_for_connection<br />
+			</td>
+		</tr>
+		<tr>
+			<td>
+				authorized_key<br />
+			</td>
+			<td>
+				assemble<br />
+			</td>
+			<td>
+				blockinfile<br />
+			</td>
+			<td>
+				lineinfile<br />
+			</td>
+			<td>
+				git<br />
+			</td>
+		</tr>
+	</tbody>
+</table>
+<br />
+
+More about Ansible for IBM i GitHub repository. 
+Currently, all the Ansible for IBM i modules, plugins and samples can be found via the link https://github.ibm.com/IBMi-Cloud/ansible-for-i/. You may want to start with the README for detail information including an installation guide.
 
