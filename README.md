@@ -376,13 +376,14 @@ With the supported IBM i modules and Ansible core modules, common IBM i tasks ca
 1. Prepare your environment.
 Before you can successfully run your first Ansible task, you need to make sure that your environment is ready. This means that your Ansible engine system and IBM i systems to be managed should both meet the certain environment requirements. You need to follow the README of the Ansible for IBM i GitHub repository for dependency checking and installation guide. 
 After your environment is ready, the first thing to do is to configure IBM i inventory. For Ansible engine, inventory information could be configured into configuration file. For more information about Ansible inventory, please check out this link: https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html. Here is a sample file content of the IBM i inventory:
-
+```
 [ibmi]
 9.5.xxx.yyy ansible_ssh_user=youribmiuser ansible_ssh_pass=yourpassword
 
 [ibmi:vars]
 ansible_python_interpreter="/QOpensys/pkgs/bin/python2"
 ansible_ssh_common_args='-o StrictHostKeyChecking=no'
+```
 
 In the above section of configuration file, a group named ‘ibmi’ has been created and there is only one system under that group. Also, the variables against group ibmi have been defined in the file. One important variable is ansible_python_interpreter which tells Ansible where to find Python on the endpoint IBM i system in group ibmi. You
 If you use Ansible Tower, you will have to do all the inventory configurations via the GUI.
