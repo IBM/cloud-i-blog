@@ -10,7 +10,7 @@ There are several cases that IBM i customers or ISVs can take advantage of Ansib
 5. Ansible is already being operated by a certain group. And the operator with no IBM i skills wants to do basic management works of IBM i via Ansible. Ansible developers also can use IBM i modules to complete their playbook writing even if they may not have enough IBM i skills. 
 
 # Introduce IBM i modules of Ansible
-The support of Ansible for IBM i focuses on the module functions. In this case, the Ansible engine needs to be installed on Linux servers and IBM i systems are managed as endpoints. Some of the Ansible core modules can work with IBM i PASE environment very well already. For example, copy and fetch modules of Ansible can be used to copy and fetch stream files to and from IBM i systems. Ansible module ‘command’ can also be used to execute PASE commands. However, for most of IBM i customers , the native IBM i environment, which is object based and managed by CL commands, running COBOL and RPG programs, is much more important. Previously, there was no module written for IBM i native environment. IBM started to provide IBM i modules from 2020, 1H. These modules can be found from GitHub  https://github.ibm.com/IBMi-Cloud/ansible-for-i/ . Although now these Ansible modules are still in BETA version, you can start to try them out for your early testing or proof of concept. The GA version of IBM i modules will come out in the coming months. Moreover, this repository supports Ansible Tower so that the modules, plug-ins and playbooks can be directly loaded to Ansible Tower through the GUI. There will be an example in later sections of this article.
+The support of Ansible for IBM i focuses on the module functions. In this case, the Ansible engine needs to be installed on Linux servers and IBM i systems are managed as endpoints. Some of the Ansible core modules can work with IBM i PASE environment very well already. For example, copy and fetch modules of Ansible can be used to copy and fetch stream files to and from IBM i systems. Ansible module ‘command’ can also be used to execute PASE commands. However, for most of IBM i customers , the native IBM i environment, which is object based and managed by CL commands, running COBOL and RPG programs, is much more important. Previously, there was no module written for IBM i native environment. IBM started to provide IBM i modules from 2020, 1H. These modules can be found from GitHub https://github.com/IBM/ansible-for-i. Although now these Ansible modules are still in BETA version, you can start to try them out for your early testing or proof of concept. The GA version of IBM i modules will come out in the coming months. Moreover, this repository supports Ansible Tower so that the modules, plug-ins and playbooks can be directly loaded to Ansible Tower through the GUI. There will be an example in later sections of this article.
 
 The following table lists the current IBM i modules in the GitHub repository. More modules will be added throughout this year and there will be very frequent updates to the repository. 
 <table>
@@ -235,7 +235,7 @@ The following table lists the current IBM i modules in the GitHub repository. Mo
 				<a href="https://github.com/IBM/ansible-for-i/tree/master/lib/ansible/modules/ibmi/ibmi_message.py">ibmi_message</a><br />
 			</td>
 			<td>
-				Search or reply message on a remote IBMi node<br />
+				Search message on a remote IBMi node<br />
 			</td>
 		</tr>
 		<tr>
@@ -366,7 +366,7 @@ The following table lists the core modules that can be used for IBM i tasks. Ple
 </table>
 
 More about Ansible for IBM i GitHub repository. 
-Currently, all the Ansible for IBM i modules, plugins and samples can be found via the link https://github.ibm.com/IBMi-Cloud/ansible-for-i/. You may want to start with the README for detail information including an installation guide.
+Currently, all the Ansible for IBM i modules, plugins and samples can be found via the link https://github.com/IBM/ansible-for-i. You may want to start with the README for detail information including an installation guide.
 
 # Examples
 With the supported IBM i modules and Ansible core modules, common IBM i tasks can all be done by Ansible. Here give some examples of how to use Ansible modules for IBM i. 
