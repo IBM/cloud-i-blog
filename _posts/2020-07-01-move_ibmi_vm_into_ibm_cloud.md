@@ -2,7 +2,7 @@
 layout: post
 title:  "Move your IBM i virtual machine into IBM Cloud"
 date:   2020-07-01 10:15
-categories: ansible
+categories: cloud
 permalink: /archivers/2020_0701_move_your_ibm_i_virtual_machine_into_ibm_cloud
 ---
 
