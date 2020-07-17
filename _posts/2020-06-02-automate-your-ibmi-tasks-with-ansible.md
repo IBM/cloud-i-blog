@@ -3,7 +3,7 @@ layout: post
 title:  "Automate your IBM i tasks with Ansible"
 date:   2020-06-02 08:00
 categories: ansible
-permalink: /archivers/test
+permalink: /archivers/2020_0602_automate_your_ibm_i_tasks_with_ansible
 ---
 
 by Wang Yun, Zhu Li Jun
