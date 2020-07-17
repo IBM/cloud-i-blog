@@ -1,5 +1,5 @@
 # Site settings
-title: Cloud for IBM i
+title: IBM i Cloud Blog
 url: "https://ibm.github.io"    # the protocol and hostname of your site, eg. `https://ibm.github.io`
 baseurl: "/cloud-i-blog" # the prefix of your site uri, eg. `"/cloud-i-blog"` or empty string `""`
 #timezone: Asia/Chongqing
