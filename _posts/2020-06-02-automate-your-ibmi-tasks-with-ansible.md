@@ -6,8 +6,6 @@ categories: ansible
 permalink: /archivers/test
 ---
 
-# Automate your IBM i tasks with Ansible
-
 by Wang Yun, Zhu Li Jun
 
 Ansible is a radically simple IT automation system. It handles configuration management, application deployment, cloud provisioning, ad-hoc task execution, network automation, and multi-node orchestration. IBM i is an operating system that has thousands of core workloads running for different industries worldwide. More and more IBM i customers plan or have already started the journey of automating tasks and moving workloads into cloud environment. Traditional IBM i MSPs and ISVs are also looking for better solutions to improve the efficiency of system and application management. Ansible for IBM i can fit most of the on-prem tasks and cloud automation requirements for IBM i customers. 
