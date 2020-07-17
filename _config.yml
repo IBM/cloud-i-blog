@@ -1,1 +1,59 @@
-theme: jekyll-theme-cayman
+# Site settings
+title: Cloud for IBM i
+url: "https://ibm.github.io"    # the protocol and hostname of your site, eg. `https://ibm.github.io`
+baseurl: "/cloud-i-blog" # the prefix of your site uri, eg. `"/cloud-i-blog"` or empty string `""`
+#timezone: Asia/Chongqing
+description: >
+  IBM i and Cloud Technology
+
+# Your information
+email: cdlwangy@cn.ibm.com
+author: IBM i Cloud Team
+avatar: ""
+profile: IBM i Cloud Team Blog
+#twitter_username: twitter_username
+#github_username:  github_username
+profile_links:
+  Email: "mailto:cdlwangy@cn.ibm.com"
+  GitHub: "https://github.com/IBM"
+  # You can add more profile links above, or edit _includes/sidebar.html 
+
+# Comment Service (Disqus or 多说)
+#  choose one and un-comment the line to active it
+#disqus_shortname: xxx   # get one: https://disqus.com/admin/signup/
+#duoshuo_shortname: xxx  # get one: http://duoshuo.com/create-site/
+
+excerpt_separator: <!--more-->
+
+header:
+  links:             # Links on the header. Link to in-site page with a slash as prefix
+    About: /about/
+    Category: /category/
+    # Donate: https://donate.net/donate.html
+
+permalink: /archivers/:title
+plugins:
+ - jekyll-paginate
+ - jekyll-gist
+ - jemoji
+
+# Build settings
+paginate: 5
+paginate_path: "page:num"
+
+highlighter: rouge
+markdown: kramdown
+
+# https://jekyllrb.com/docs/configuration/#precedence
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  math_engine: mathjax
