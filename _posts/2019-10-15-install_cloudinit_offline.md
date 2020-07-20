@@ -25,7 +25,7 @@ QSH CMD('touch -C 819 /tmp/bootstrap.log; /QOpenSys/usr/bin/ksh /tmp/bootstrap.s
   - cloud-init-1.2-0
   
 • Check which packages are not installed. For example run “/Qopensys/pkgs/bin/rpm -qa|grep python2-ibm_db”. If the output is none, that means the package is not installed. The output in below snapshot means python2 has been installed. But python2-ibm_db, python2-six, cloud-init are not installed.
-![Image created](../resources/pic/20201015/cloudinit1.png)
+![check packages](../resources/pic/20201015/cloudinit1.png)
 
 • Download missing rpm packages from https://public.dhe.ibm.com/software/ibmi/products/pase/rpms/repo/ to your PC. (Note, different rpm packages may be in different sub-directories, for example, python2-ibm_db and cloud-init locate at ppc64, python2-six locates at noarch),  then transfer them to your IBM i.
 
