@@ -222,7 +222,7 @@ For the usage of each role, please click the hyper link of the role names in the
 # More advanced fix management solution
 Besides releasing the building blocks, there are several modules, roles and playbooks to help you to manage the fixes under an advanced fix management structure. The below picture shows the architecture of this solution(The related playbooks are here: https://github.com/IBM/ansible-for-i/tree/1.2.1/usecases/fix_management).
 
-![Advanced Fix Management Architecture](https://raw.githubusercontent.com/IBM/cloud-i-blog/master/resources/pic/20210115/ansible-advanced-fix-management-1.png)
+![Advanced Fix Management Architecture](../resources/pic/20210115/ansible-advanced-fix-management-1.png)
 
 In this architecture, we introduce an infrastructure of fix repository and catalog. As you can see from above picture, there is one IBM i partition shown as light blue box that faces the internet. On this partition, there is PTF and image repository (repository in short in the article) which consists of different places to store the downloaded fixes. The checking of whether there is new group from IBM is scheduled and the download of the fixes is automated as this repository partition is able to connect to the internet. Also, there is PTF and PTF group catalog (catalog in short in this article) which is used to maintain the information of the fixes downloaded into the repository. Once the fixes have been downloaded into the repository, the catalog is updated with PTF and PTF group information as well. By doing so, the user has the capability to check and search what fixes are now in the repository. Furthermore, better fix comparison work can be done between the repository and the endpoint IBM i systems. 
 The repository of IBM i partition also plays as a role of providing fixes to other IBM i systems. Ansible server manages this repository partition together with other endpoint IBM i systems. In the picture, the orange boxes are the systems that need to install the PTFs and PTF groups. Ansible server uses IBM i collections to send and install the fixes from the repository partition to these orange systems. Also, it could compare the fix status between repository and target IBM i systems.
@@ -312,7 +312,7 @@ Besides the modules and roles, a series of playbooks have been provided in the u
 Here just give you a simple example of how you could leverage the provided playbooks for the advanced fix management solution. When you go to the directory of usecases/fix_management, you could find a README file describing the inputs needed for each playbook, with examples. 
 
 The below picture shows the description of one provided playbook ‘check_download_ptf_group’. This playbook helps to check whether the PTF group specified is the latest in the local repository. If the PTF group does not exist in the repository, the playbook will automatically download the group from IBM fix central.
-![check_download_ptf_group playbook](resources/pic/20210115/ansible-advanced-fix-management-2.png)
+![check_download_ptf_group playbook](../resources/pic/20210115/ansible-advanced-fix-management-2.png)
 
 We just follow the example provided by the description in the above picture. In the command line, the below command is issued: 
 ```
@@ -320,7 +320,7 @@ ansible-playbook ./check_download_ptf_group.yml -i hosts.ini -e "{'repo_server':
 ```
 
 In the above command, the ‘ibmi’ is the inventory group name configured in the file hosts.ini.
-![check_download_ptf_group playbook output](resources/pic/20210115/ansible-advanced-fix-management-3.png)
+![check_download_ptf_group playbook output](../resources/pic/20210115/ansible-advanced-fix-management-3.png)
 
 There are 13 tasks inside the playbook check_download_ptf_group.yml, and you could see from the output that the PTF group is still under downloading even this playbook finishes its running. The playbook output also tells that PTF group download order number is 2101806120. 
 
@@ -329,7 +329,7 @@ The downloading of the PTF group may take a while, and you could leverage anothe
 ansible-playbook ./check_ptf_group_order_status.yml -i hosts.ini -e "{'repo_server': 'ibmi'}"
 ```
 
-![check_ptf_group_order_status playbook output](resources/pic/20210115/ansible-advanced-fix-management-4.png)
+![check_ptf_group_order_status playbook output](../resources/pic/20210115/ansible-advanced-fix-management-4.png)
 
 The check_ptf_group_order_status playbook will check the status of all the PTF group download activities. By searching 2101806120 from the above output, we could see that the PTF group download status is downloaded.  
 
