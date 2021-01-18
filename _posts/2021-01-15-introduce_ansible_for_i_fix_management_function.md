@@ -312,6 +312,7 @@ Besides the modules and roles, a series of playbooks have been provided in the u
 Here just give you a simple example of how you could leverage the provided playbooks for the advanced fix management solution. When you go to the directory of usecases/fix_management, you could find a README file describing the inputs needed for each playbook, with examples. 
 
 The below picture shows the description of one provided playbook check_download_ptf_group. This playbook helps to check whether the PTF group specified is the latest in the local repository. If the PTF group does not exist in the repository, the playbook will automatically download the group from IBM fix central.
+
 ![check_download_ptf_group playbook](../resources/pic/20210115/ansible-advanced-fix-management-2.png)
 
 We just follow the example provided by the description in the above picture. In the command line, the below command is issued: 
@@ -320,6 +321,7 @@ ansible-playbook ./check_download_ptf_group.yml -i hosts.ini -e "{'repo_server':
 ```
 
 In the above command, the ibmi is the inventory group name configured in the file hosts.ini.
+
 ![check_download_ptf_group playbook output](../resources/pic/20210115/ansible-advanced-fix-management-3.png)
 
 There are 13 tasks inside the playbook check_download_ptf_group.yml, and you could see from the output that the PTF group is still under downloading even this playbook finishes its running. The playbook output also tells that PTF group download order number is 2101806120. 
