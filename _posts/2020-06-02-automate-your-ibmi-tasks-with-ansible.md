@@ -440,7 +440,7 @@ In the playbook, the inventory 'ibmi' is used and module ibmi_cl_command is exec
 
 Once you have your playbook written, you can use ansible-playbook command to run the playbook. Similar to ‘ansible’ command, you could specify the path to IBM i modules and inventory if you don’t want to use the default locations.
 ```
-ansible-playbook -i /yourpath/hosts_ibmi.ini -M /yourmodulepath/ ibmi-cl-command-sample.yml
+ansible-playbook -i /yourpath/hosts_ibmi.ini ibmi-cl-command-sample.yml
 ```
 For more information about Ansible playbook, please refer to the link here: <br>
 https://docs.ansible.com/ansible/latest/user_guide/playbooks.html <br>
