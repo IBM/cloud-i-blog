@@ -383,7 +383,7 @@ With the supported IBM i modules and Ansible core modules, common IBM i tasks ca
 
 1.Prepare your environment.
 
-Before you can successfully run your first Ansible task, you need to make sure that your environment is ready. This means that your Ansible engine system and IBM i systems to be managed should both meet the certain environment requirements. Please check out the link https://ibm.github.io/ansible-for-i/installation.html to get more information of how you could install IBM i Ansible collections on your Ansible engine system and how to enable your IBM i as an Ansible managed node.
+Before you can successfully run your first Ansible task, you need to make sure that your environment is ready. This means that your Ansible engine system and IBM i systems to be managed should both meet the certain environment requirements. Please check out the link <a href="https://ibm.github.io/ansible-for-i/installation.html" target="_blank">https://ibm.github.io/ansible-for-i/installation.html</a> to get more information of how you could install IBM i Ansible collections on your Ansible engine system and how to enable your IBM i as an Ansible managed node.
 After your environment is ready, the first thing to do is to configure IBM i inventory. For Ansible engine, inventory information could be configured into configuration file. For more information about Ansible inventory, please check out this link: https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html. Here is a sample file content of the IBM i inventory:
 ```
 [ibmi]
