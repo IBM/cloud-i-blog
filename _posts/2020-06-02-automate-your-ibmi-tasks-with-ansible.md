@@ -19,13 +19,14 @@ There are several cases that IBM i customers or ISVs can take advantage of Ansib
 
 # Introduce IBM i modules of Ansible
 The support of Ansible for IBM i focuses on the module functions. In this case, the Ansible engine needs to be installed on Linux servers and IBM i systems are  as endpoints. Some of the Ansible core modules can work with IBM i PASE environment very well already. For example, copy and fetch modules of Ansible can be used to copy and fetch stream files to and from IBM i systems. Ansible module ‘command’ can also be used to execute PASE commands. However, for most of IBM i customers , the native IBM i environment, which is object based and managed by CL commands, running COBOL and RPG programs, is much more important. Previously, there was no module written for IBM i native environment. IBM started to provide IBM i modules from 2020, 1H. These modules can be found from GitHub https://github.com/IBM/ansible-for-i. 
+
 The Ansible for IBM i support is also available in Ansible Galaxy(https://galaxy.ansible.com/ibm/power_ibmi) and Red Hat Automation Hub(https://cloud.redhat.com/ansible/automation-hub/ibm/power_ibmi), where you could directly download the released package and use simple command to install everything.
 
-The following table lists the current IBM i modules in the GitHub repository. More modules will be added throughout this year and there will be very frequent updates to the repository. 
+The following table lists some of the current IBM i modules in the GitHub repository. More modules will be added throughout this year and there will be very frequent updates to the repository. 
 <table>
   <tr>
     <td>
-      <a href="https://github.com/IBM/ansible-for-i/tree/master/lib/ansible/modules/ibmi/ibmi_at.py">ibmi_at</a>
+      <a href="https://github.com/IBM/ansible-for-i/blob/devel/plugins/modules/ibmi_at.py">ibmi_at</a>
     </td>
     <td>
       Schedule a batch job on a remote IBMi node.
@@ -33,7 +34,7 @@ The following table lists the current IBM i modules in the GitHub repository. Mo
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/IBM/ansible-for-i/tree/master/lib/ansible/modules/ibmi/ibmi_cl_command.py">ibmi_cl_command</a>
+      <a href="https://github.com/IBM/ansible-for-i/blob/devel/plugins/modules/ibmi_cl_command.py">ibmi_cl_command</a>
     </td>
     <td>
       Executes a CL command.
@@ -41,7 +42,7 @@ The following table lists the current IBM i modules in the GitHub repository. Mo
   </tr>  
   <tr>
     <td>
-      <a href="https://github.com/IBM/ansible-for-i/tree/master/lib/ansible/modules/ibmi/ibmi_copy.py">ibmi_copy</a>
+      <a href="https://github.com/IBM/ansible-for-i/blob/devel/plugins/modules/ibmi_copy.py">ibmi_copy</a>
     </td>
     <td>
       Copy a save file from local to a remote IBMi node.
@@ -49,7 +50,7 @@ The following table lists the current IBM i modules in the GitHub repository. Mo
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/IBM/ansible-for-i/tree/master/lib/ansible/modules/ibmi/ibmi_display_subsystem.py">ibmi_display_subsystem</a>
+      <a href="https://github.com/IBM/ansible-for-i/blob/devel/plugins/modules/ibmi_display_subsystem.py">ibmi_display_subsystem</a>
     </td>
     <td>
       Display all currently active subsystems or currently active jobs in a subsystem.
@@ -57,7 +58,7 @@ The following table lists the current IBM i modules in the GitHub repository. Mo
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/IBM/ansible-for-i/tree/master/lib/ansible/modules/ibmi/ibmi_end_subsystem.py">ibmi_end_subsystem</a>
+      <a href="https://github.com/IBM/ansible-for-i/blob/devel/plugins/modules/ibmi_end_subsystem.py">ibmi_end_subsystem</a>
     </td>
     <td>
       End a subsystem.
@@ -65,7 +66,7 @@ The following table lists the current IBM i modules in the GitHub repository. Mo
   </tr>  
 		<tr>
 			<td>
-				<a href="https://github.com/IBM/ansible-for-i/tree/master/lib/ansible/modules/ibmi/ibmi_fetch.py">ibmi_fetch</a><br />
+				<a href="https://github.com/IBM/ansible-for-i/blob/devel/plugins/modules/ibmi_fetch.py">ibmi_fetch</a><br />
 			</td>
 			<td>
 				Fetch objects or a library from a remote IBMi node and store on local.<br />
@@ -73,7 +74,7 @@ The following table lists the current IBM i modules in the GitHub repository. Mo
 		</tr>
 		<tr>
 			<td>
-				<a href="https://github.com/IBM/ansible-for-i/tree/master/lib/ansible/modules/ibmi/ibmi_install_product_from_savf.py">ibmi_install_product_from_savf</a><br />
+				<a href="https://github.com/IBM/ansible-for-i/blob/devel/plugins/modules/ibmi_install_product_from_savf.py">ibmi_install_product_from_savf</a><br />
 			</td>
 			<td>
 				Install the the licensed program(product) from a save file.<br />
@@ -81,7 +82,7 @@ The following table lists the current IBM i modules in the GitHub repository. Mo
 		</tr>
 		<tr>
 			<td>
-				<a href="https://github.com/IBM/ansible-for-i/tree/master/lib/ansible/modules/ibmi/ibmi_lib_restore.py">ibmi_lib_restore</a><br />
+				<a href="https://github.com/IBM/ansible-for-i/blob/devel/plugins/modules/ibmi_lib_restore.py">ibmi_lib_restore</a><br />
 			</td>
 			<td>
 				Restore one library on a remote IBMi node.<br />
@@ -89,7 +90,7 @@ The following table lists the current IBM i modules in the GitHub repository. Mo
 		</tr>
 		<tr>
 			<td>
-				<a href="https://github.com/IBM/ansible-for-i/tree/master/lib/ansible/modules/ibmi/ibmi_lib_save.py">ibmi_lib_save</a><br />
+				<a href="https://github.com/IBM/ansible-for-i/blob/devel/plugins/modules/ibmi_lib_save.py">ibmi_lib_save</a><br />
 			</td>
 			<td>
 				Save one libary on a remote IBMi node.<br />
@@ -97,7 +98,7 @@ The following table lists the current IBM i modules in the GitHub repository. Mo
 		</tr>
 		<tr>
 			<td>
-				<a href="https://github.com/IBM/ansible-for-i/tree/master/lib/ansible/modules/ibmi/ibmi_object_authority.py">ibmi_object_authority</a><br />
+				<a href="https://github.com/IBM/ansible-for-i/blob/devel/plugins/modules/ibmi_object_authority.py">ibmi_object_authority</a><br />
 			</td>
 			<td>
 				Grant, Revoke and Display the Object Authority.<br />
@@ -105,7 +106,7 @@ The following table lists the current IBM i modules in the GitHub repository. Mo
 		</tr>
 		<tr>
 			<td>
-				<a href="https://github.com/IBM/ansible-for-i/tree/master/lib/ansible/modules/ibmi/ibmi_object_restore.py">ibmi_object_restore</a><br />
+				<a href="https://github.com/IBM/ansible-for-i/blob/devel/plugins/modules/ibmi_object_restore.py">ibmi_object_restore</a><br />
 			</td>
 			<td>
 				Restore one or more objects on a remote IBMi node.<br />
@@ -113,7 +114,7 @@ The following table lists the current IBM i modules in the GitHub repository. Mo
 		</tr>
 		<tr>
 			<td>
-				<a href="https://github.com/IBM/ansible-for-i/tree/master/lib/ansible/modules/ibmi/ibmi_object_save.py">ibmi_object_save</a><br />
+				<a href="https://github.com/IBM/ansible-for-i/blob/devel/plugins/modules/ibmi_object_save.py">ibmi_object_save</a><br />
 			</td>
 			<td>
 				Save one or more objects on a remote IBMi node.<br />
@@ -121,7 +122,7 @@ The following table lists the current IBM i modules in the GitHub repository. Mo
 		</tr>
 		<tr>
 			<td>
-				<a href="https://github.com/IBM/ansible-for-i/tree/master/lib/ansible/modules/ibmi/ibmi_reboot.py">ibmi_reboot</a><br />
+				<a href="https://github.com/IBM/ansible-for-i/blob/devel/plugins/modules/ibmi_reboot.py">ibmi_reboot</a><br />
 			</td>
 			<td>
 				Reboot IBMi machine.<br />
@@ -129,7 +130,7 @@ The following table lists the current IBM i modules in the GitHub repository. Mo
 		</tr>
 		<tr>
 			<td>
-				<a href="https://github.com/IBM/ansible-for-i/tree/master/lib/ansible/modules/ibmi/ibmi_save_product_to_savf.py">ibmi_save_product_to_savf</a><br />
+				<a href="https://github.com/IBM/ansible-for-i/blob/devel/plugins/modules/ibmi_save_product_to_savf.py">ibmi_save_product_to_savf</a><br />
 			</td>
 			<td>
 				Save the the licensed program(product) to a save file.<br />
@@ -137,7 +138,7 @@ The following table lists the current IBM i modules in the GitHub repository. Mo
 		</tr>
 		<tr>
 			<td>
-				<a href="https://github.com/IBM/ansible-for-i/tree/master/lib/ansible/modules/ibmi/ibmi_script.py">ibmi_script</a><br />
+				<a href="https://github.com/IBM/ansible-for-i/blob/devel/plugins/modules/ibmi_script.py">ibmi_script</a><br />
 			</td>
 			<td>
 				Execute a local cl/sql script file on a remote ibm i node. <br />
@@ -145,7 +146,7 @@ The following table lists the current IBM i modules in the GitHub repository. Mo
 		</tr>
 		<tr>
 			<td>
-				<a href="https://github.com/IBM/ansible-for-i/tree/master/lib/ansible/modules/ibmi/ibmi_script_execute.py">ibmi_script_execute</a><br />
+				<a href="https://github.com/IBM/ansible-for-i/blob/devel/plugins/modules/ibmi_script_execute.py">ibmi_script_execute</a><br />
 			</td>
 			<td>
 				Execute a cl/sql script file on a remote ibm i node.<br />
@@ -153,7 +154,7 @@ The following table lists the current IBM i modules in the GitHub repository. Mo
 		</tr>
 		<tr>
 			<td>
-				<a href="https://github.com/IBM/ansible-for-i/tree/master/lib/ansible/modules/ibmi/ibmi_sql_execute.py">ibmi_sql_execute</a><br />
+				<a href="https://github.com/IBM/ansible-for-i/blob/devel/plugins/modules/ibmi_sql_execute.py">ibmi_sql_execute</a><br />
 			</td>
 			<td>
 				Executes a SQL non-DQL(Data Query Language) statement.<br />
@@ -161,7 +162,7 @@ The following table lists the current IBM i modules in the GitHub repository. Mo
 		</tr>
 		<tr>
 			<td>
-				<a href="https://github.com/IBM/ansible-for-i/tree/master/lib/ansible/modules/ibmi/ibmi_sql_query.py">ibmi_sql_query</a><br />
+				<a href="https://github.com/IBM/ansible-for-i/blob/devel/plugins/modules/ibmi_sql_query.py">ibmi_sql_query</a><br />
 			</td>
 			<td>
 				Executes a SQL DQL(Data Query Language) statement.<br />
@@ -169,7 +170,7 @@ The following table lists the current IBM i modules in the GitHub repository. Mo
 		</tr>
 		<tr>
 			<td>
-				<a href="https://github.com/IBM/ansible-for-i/tree/master/lib/ansible/modules/ibmi/ibmi_start_subsystem.py">ibmi_start_subsystem</a><br />
+				<a href="https://github.com/IBM/ansible-for-i/blob/devel/plugins/modules/ibmi_start_subsystem.py">ibmi_start_subsystem</a><br />
 			</td>
 			<td>
 				Start a subsystem.<br />
@@ -177,7 +178,7 @@ The following table lists the current IBM i modules in the GitHub repository. Mo
 		</tr>
 		<tr>
 			<td>
-				<a href="https://github.com/IBM/ansible-for-i/tree/master/lib/ansible/modules/ibmi/ibmi_sync.py">ibmi_sync</a><br />
+				<a href="https://github.com/IBM/ansible-for-i/blob/devel/plugins/modules/ibmi_sync.py">ibmi_sync</a><br />
 			</td>
 			<td>
 				Synchronize a save file from current ibm i node A to another ibm i node B.<br />
@@ -185,7 +186,7 @@ The following table lists the current IBM i modules in the GitHub repository. Mo
 		</tr>
 		<tr>
 			<td>
-				<a href="https://github.com/IBM/ansible-for-i/tree/master/lib/ansible/modules/ibmi/ibmi_synchronize.py">ibmi_synchronize</a><br />
+				<a href="https://github.com/IBM/ansible-for-i/blob/devel/plugins/modules/ibmi_synchronize.py">ibmi_synchronize</a><br />
 			</td>
 			<td>
 				Synchronize a save file from ibm i node A to another ibm i node B.<br />
@@ -193,7 +194,7 @@ The following table lists the current IBM i modules in the GitHub repository. Mo
 		</tr>
 		<tr>
 			<td>
-				<a href="https://github.com/IBM/ansible-for-i/tree/master/lib/ansible/modules/ibmi/ibmi_uninstall_product.py">ibmi_uninstall_product</a><br />
+				<a href="https://github.com/IBM/ansible-for-i/blob/devel/plugins/modules/ibmi_uninstall_product.py">ibmi_uninstall_product</a><br />
 			</td>
 			<td>
 				Delete the objects that make up the licensed program(product).<br />
@@ -201,7 +202,7 @@ The following table lists the current IBM i modules in the GitHub repository. Mo
 		</tr>
 		<tr>
 			<td>
-				<a href="https://github.com/IBM/ansible-for-i/tree/master/lib/ansible/modules/ibmi/ibmi_user_and_group.py">ibmi_user_and_group</a><br />
+				<a href="https://github.com/IBM/ansible-for-i/blob/devel/plugins/modules/ibmi_user_and_group.py">ibmi_user_and_group</a><br />
 			</td>
 			<td>
 				Create, Change and Display a user(or group) profile.<br />
@@ -209,7 +210,7 @@ The following table lists the current IBM i modules in the GitHub repository. Mo
 		</tr>
 		<tr>
 			<td>
-				<a href="https://github.com/IBM/ansible-for-i/tree/master/lib/ansible/modules/ibmi/ibmi_device_vary.py">ibmi_device_vary</a><br />
+				<a href="https://github.com/IBM/ansible-for-i/blob/devel/plugins/modules/ibmi_device_vary.py">ibmi_device_vary</a><br />
 			</td>
 			<td>
 				Vary on or off target device on a remote IBMi node<br />
@@ -217,7 +218,7 @@ The following table lists the current IBM i modules in the GitHub repository. Mo
 		</tr>
 		<tr>
 			<td>
-				<a href="https://github.com/IBM/ansible-for-i/tree/master/lib/ansible/modules/ibmi/ibmi_host_server_service.py">ibmi_host_server_service</a><br />
+				<a href="https://github.com/IBM/ansible-for-i/blob/devel/plugins/modules/ibmi_host_server_service.py">ibmi_host_server_service</a><br />
 			</td>
 			<td>
 				Manage host server on a remote IBMi node<br />
@@ -225,7 +226,7 @@ The following table lists the current IBM i modules in the GitHub repository. Mo
 		</tr>
 		<tr>
 			<td>
-				<a href="https://github.com/IBM/ansible-for-i/tree/master/lib/ansible/modules/ibmi/ibmi_tcp_server_service.py">ibmi_tcp_server_service</a><br />
+				<a href="https://github.com/IBM/ansible-for-i/blob/devel/plugins/modules/ibmi_tcp_server_service.py">ibmi_tcp_server_service</a><br />
 			</td>
 			<td>
 				Manage tcp server on a remote IBMi node<br />
@@ -233,7 +234,7 @@ The following table lists the current IBM i modules in the GitHub repository. Mo
 		</tr>
 		<tr>
 			<td>
-				<a href="https://github.com/IBM/ansible-for-i/tree/master/lib/ansible/modules/ibmi/ibmi_iasp.py">ibmi_iasp</a><br />
+				<a href="https://github.com/IBM/ansible-for-i/blob/devel/plugins/modules/ibmi_iasp.py">ibmi_iasp</a><br />
 			</td>
 			<td>
 				Control IASP on target IBMi node<br />
@@ -241,7 +242,7 @@ The following table lists the current IBM i modules in the GitHub repository. Mo
 		</tr>
 		<tr>
 			<td>
-				<a href="https://github.com/IBM/ansible-for-i/tree/master/lib/ansible/modules/ibmi/ibmi_message.py">ibmi_message</a><br />
+				<a href="https://github.com/IBM/ansible-for-i/blob/devel/plugins/modules/ibmi_message.py">ibmi_message</a><br />
 			</td>
 			<td>
 				Search message on a remote IBMi node<br />
@@ -249,7 +250,7 @@ The following table lists the current IBM i modules in the GitHub repository. Mo
 		</tr>
 		<tr>
 			<td>
-				<a href="https://github.com/IBM/ansible-for-i/tree/master/lib/ansible/modules/ibmi/ibmi_fix.py">ibmi_fix</a><br />
+				<a href="https://github.com/IBM/ansible-for-i/blob/devel/plugins/modules/ibmi_fix.py">ibmi_fix</a><br />
 			</td>
 			<td>
 				Load from save file, apply, remove or query PTF(s). <br />
@@ -257,7 +258,7 @@ The following table lists the current IBM i modules in the GitHub repository. Mo
 		</tr>
 		<tr>
 			<td>
-				<a href="https://github.com/IBM/ansible-for-i/tree/master/lib/ansible/modules/ibmi/ibmi_fix_imgclg.py">ibmi_fix_imgclg</a><br />
+				<a href="https://github.com/IBM/ansible-for-i/blob/devel/plugins/modules/ibmi_fix_imgclg.py">ibmi_fix_imgclg</a><br />
 			</td>
 			<td>
 				Install fixes from virtual image.<br />
@@ -265,7 +266,7 @@ The following table lists the current IBM i modules in the GitHub repository. Mo
 		</tr>
 		<tr>
 			<td>
-				<a href="https://github.com/IBM/ansible-for-i/tree/master/lib/ansible/modules/ibmi/ibmi_job.py">ibmi_job</a><br />
+				<a href="https://github.com/IBM/ansible-for-i/blob/devel/plugins/modules/ibmi_job.py">ibmi_job</a><br />
 			</td>
 			<td>
 				Returns job information per user request.<br />
@@ -273,7 +274,7 @@ The following table lists the current IBM i modules in the GitHub repository. Mo
 		</tr>
 		<tr>
 			<td>
-				<a href="https://github.com/IBM/ansible-for-i/tree/master/lib/ansible/modules/ibmi/ibmi_object_find.py">ibmi_object_find</a><br />
+				<a href="https://github.com/IBM/ansible-for-i/blob/devel/plugins/modules/ibmi_object_find.py">ibmi_object_find</a><br />
 			</td>
 			<td>
 				Find specific IBM i object(s).<br />
@@ -281,7 +282,7 @@ The following table lists the current IBM i modules in the GitHub repository. Mo
 		</tr>
 		<tr>
 			<td>
-				<a href="https://github.com/IBM/ansible-for-i/tree/master/lib/ansible/modules/ibmi/ibmi_submit_job.py">ibmi_submit_job</a><br />
+				<a href="https://github.com/IBM/ansible-for-i/blob/devel/plugins/modules/ibmi_submit_job.py">ibmi_submit_job</a><br />
 			</td>
 			<td>
 				Submit an IBM i job.<br />
@@ -289,7 +290,7 @@ The following table lists the current IBM i modules in the GitHub repository. Mo
 		</tr>
 		<tr>
 			<td>
-				<a href="https://github.com/IBM/ansible-for-i/tree/master/lib/ansible/modules/ibmi/ibmi_tcp_interface.py">ibmi_tcp_interface</a><br />
+				<a href="https://github.com/IBM/ansible-for-i/blob/devel/plugins/modules/ibmi_tcp_interface.py">ibmi_tcp_interface</a><br />
 			</td>
 			<td>
 				Manage IBM i tcp interface. You can add, remove, start, end or query a tcp interface.<br />
