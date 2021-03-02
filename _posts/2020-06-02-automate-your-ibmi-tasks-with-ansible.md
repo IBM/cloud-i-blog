@@ -458,7 +458,7 @@ In the repository, there are IBM i module test cases in the format of playbooks 
 
 In the repository of <a href="https://github.com/airwangyun/IBM_i_Ansible_Tower_Demo" target="_blank">https://github.com/airwangyun/IBM_i_Ansible_Tower_Demo</a>, there is a sample playbook ibmi-cl-command-sample.yml in the playbooks directory that you could use in your Ansible Tower template for testing purpose. The repository structure supports creating Ansible Tower project. Here are some key steps showing you where to config the GitHub repository to load the modules and playbooks.
 
-The assumption here is that the inventory and credential are all configured already. When creating a new project, you could specify the SCM TYPE as Git and fill the Ansible for IBM i GitHub repository link in SCM URL field. ‘master’ branch is used in this example. <br>
+The assumption here is that the inventory and credential are all configured already. When creating a new project, you could specify the SCM TYPE as Git and fill the demo GitHub repository link in SCM URL field. ‘master’ branch is used in this example. <br>
 ![Create IBM i Sample Project in Ansible Tower](../resources/pic/misc/ansible-automation-tower-1.png)
 <br><br>
 After the project has been created, you need to define Template to run particular tasks. In the Template, you need to select the playbook from drop down menu of PLAYBOOK option. The list of playbook files are automatically loaded from GitHub repository. <br>
